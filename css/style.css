@@ -2,14 +2,26 @@ ul {
     list-style: none;
 }
 
+body {
+    background-color: rgb(255, 255, 128);
+}
+
 .gallery {
+    margin-top: auto;
+    margin-bottom: auto;
     display: flex;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 0px 7px;
+    padding: 0;
+    justify-content: center;
 }
 
 .gallery-item {
-    width: 100px;
-    height: 47px;
-    padding: 36px;
+    width: calc(27.33% - 50px);
+    margin: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item:hover {
+    transform: scale(1.1);
 }

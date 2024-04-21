@@ -68,6 +68,18 @@ const images = [
 
 const gallery = document.querySelector('ul.gallery')
 
+
+
+gallery.addEventListener('click', function(event) {
+    if (event.target.classList.contains('gallery-image')) {
+        const largeImageSrc = event.target.dataset.source;
+        const instance = basicLightbox.create(`<img src = "${largeImageSrc}" width="800" height="600">`)
+        instance.show()
+        console.log("link to large image:", largeImageSrc);
+    }
+});
+
+
 images.forEach(image => {
     const galleryItem = document.createElement('li')
     galleryItem.classList.add('gallery-item')
@@ -90,6 +102,10 @@ images.forEach(image => {
     galleryItem.appendChild(galleryLink)
     gallery.appendChild(galleryItem)
 })
+
+
+
+
 
 
 
