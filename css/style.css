@@ -7,8 +7,7 @@ body {
 }
 
 .gallery {
-    margin-top: auto;
-    margin-bottom: auto;
+   
     display: flex;
     flex-wrap: wrap;
     gap: 0px 7px;

@@ -95,7 +95,7 @@ images.forEach(image => {
     galleryImg.alt = image.description
 
     galleryImg.width = 350
-    galleryImg.height = 150
+    galleryImg.height = 250
 
 
     galleryLink.appendChild(galleryImg)
