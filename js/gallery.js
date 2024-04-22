@@ -67,11 +67,11 @@ const images = [
 
 
 const gallery = document.querySelector('ul.gallery')
-
+const fragment = document.createDocumentFragment()
 
 
 gallery.addEventListener('click', function(event) {
-    if (event.target.classList.contains('gallery-image')) {
+    if (event.target.classList.contains('gallery-img')) {
         const largeImageSrc = event.target.dataset.source;
         const instance = basicLightbox.create(`<img src = "${largeImageSrc}" width="800" height="600">`)
         instance.show()
@@ -89,7 +89,7 @@ images.forEach(image => {
     galleryLink.href = image.original
 
     const galleryImg = document.createElement('img')
-    galleryImg.classList.add('gallery-image')
+    galleryImg.classList.add('gallery-img')
     galleryImg.src = image.preview
     galleryImg.setAttribute('data-source', image.original)
     galleryImg.alt = image.description
@@ -97,11 +97,12 @@ images.forEach(image => {
     galleryImg.width = 350
     galleryImg.height = 250
 
-
     galleryLink.appendChild(galleryImg)
-    galleryItem.appendChild(galleryLink)
-    gallery.appendChild(galleryItem)
+    galleryItem.appendChild(galleryLink)   
+    fragment.appendChild(galleryItem)
 })
+
+gallery.appendChild(fragment)
 
 
 
